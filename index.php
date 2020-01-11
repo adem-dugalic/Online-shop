@@ -1,3 +1,7 @@
+<?php
+session_start();
+require 'dbconfig/config.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,16 +21,30 @@
 			</div>
 				<ul class="links">
 					<li>
-						<a href="loginRegister.php"><img id="one" src="img/user.png"></a>
+						<?php if($_SESSION['active'] == "active"){ ?>
+						<a href="account.php" id="LogReg"><img id="one" src="img/user.png"><br><spam><?php echo $_SESSION['username']; ?></spam></a>
+						<?php }else{ ?>
+						<a href="loginRegister.php" id="LogReg"><img id="one" src="img/user.png"><br><spam><?php echo $_SESSION['username']; ?></spam></a>
+						<?php } ?>
 					</li>
 					<li>
-						<a href="#">Home</a>
+						<a href="index.php">Home</a>
 					</li>
 					<li>
-						<a href="#">Categories</a>
+						<div class="dropdown">
+						  <button class="dropbtn">Articles</button>
+						  <div class="dropdown-content">
+						    <a href="newProduct.php">New</a>
+						    <a href="list.php">All</a>
+						  </div>
+						</div>
 					</li>
 					<li>
-						<a href="#">Contact</a>
+						<?php if($_SESSION['active'] == "active"){ ?>
+						<form method="post" action="index.php"><button class="btnnn" name="logout">LogOut</button></form>
+						<?php }else{ ?>
+						<a href="loginRegister.php">Login</a>
+						<?php } ?>
 					</li>
 				</ul>
 				<div class="menu">
@@ -37,20 +55,6 @@
 
 		</div>
 
-
-
-			<!--<div class="content">
-			  <img class="Slides" src="img/shopping.png">
-			  <img class="Slides" src="img/shopping.jpg">
-			  <img class="Slides" src="img/user.png">
-			  <div class="center-container">
-			    <div class="left" onclick="plusDivs(-1)">&#10094;</div>
-			    <div class="right" onclick="plusDivs(1)">&#10095;</div>
-			    <span class="circle dem" onclick="currentDiv(1)"></span>
-			    <span class="circle demo" onclick="currentDiv(2)"></span>
-			    <span class="circle demo" onclick="currentDiv(3)"></span>
-			  </div>
-			</div>-->
 			 <div class="center-container">
 				<span class="circle dd" onclick="currentDiv(1)"></span>
 			    <span class="circle dd" onclick="currentDiv(2)"></span>
@@ -65,3 +69,13 @@
 	<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
+
+
+
+<?php
+    if(isset($_POST['logout'])){
+    session_destroy();
+    unset($_SESSION['active']); 
+    header('location: landing.php');
+  }
+  ?>

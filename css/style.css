@@ -12,6 +12,7 @@ body{
     align-items: center;
     background-color: #000;
     font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
 }
 
 .header-div{
@@ -83,6 +84,7 @@ body{
   align-items: center;
   transform: translateX(100%);
   transition: transform 0.5s ease-in;
+  font-size: 1.5em;
 }
 .navigation-div .links{
     display: flex;
@@ -91,6 +93,7 @@ body{
 }
 .links li{
         opacity: 0;
+        text-align: center;
     }
 
 .navigation-div ul li{
@@ -181,7 +184,17 @@ body{
     }
 }
 
+.search-div{
+  width: 40%;
+}
 
+#search{
+  height: 30px;
+  border: 1px solid #fff;
+  padding: 0px 15px;
+  border-radius: 10px;
+  width: 300px;
+}
 
 /*
 .content{
@@ -248,3 +261,538 @@ body{
     background-color: #fff!important;
 }
 */
+.dropbtn {
+  background-color: rgb(0,0,0,0);
+  color: cyan;
+  padding: 16px;
+  font-size: 1.2em;
+  border: none;
+  text-align: center;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  text-align: center;
+  display: none;
+  position: absolute;
+  background-color: rgb(0,0,0,0.3);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+  z-index: 1;
+  font-size: 0.8em;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #333;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: rgb(0,0,0,0.3);}
+
+
+
+
+.btnnn{
+  background-color: rgb(0,0,0,0);
+  border: none;
+  text-decoration: none;
+  color: cyan;
+  font-size: 1.2em;
+}
+
+
+/*Register and login*/
+
+.regBody{
+  background: url(../img/newBck.jpg);
+  background-position:center;
+  background-size:cover;
+
+}
+
+
+ .regForm{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+ }
+
+ .regForm1{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+ }
+
+ .containerR{
+  border-radius: 20px;
+  position: relative;
+  width: 60%;
+  min-height: 80%;
+  background: url("../img/formBck.jpg");
+  background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
+  box-shadow: 0 8px 8px rgba(0,0,0,.5);
+  margin: auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  text-align: center;
+}
+
+ .register{
+  position: relative;
+  width: 60%;
+  padding:20px;
+  left: 18%;
+  padding-top: 10%;
+}
+
+.register h2{
+  width: 100%;
+  color: #45f3ff;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.register .rowF{
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
+  grid-column-gap: 5px;
+
+}
+
+.register .rowF .colF{
+  position: relative;
+  width: 100%;
+  padding:0 10px;
+  margin: 30px 0 10px;
+  transition: 0.5s;
+}
+
+.register .rowF .inputBox{
+  position: relative;
+  width: 100%;
+  height: 40px;
+  color: #45f3ff;
+}
+
+.register .rowF .inputBox input,
+.register .rowF .inputBox.textarea textarea{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  padding:0 10px;
+  z-index: 1;
+  color: #1a1a1a;
+  transform: translateX(-50%);
+  margin-right: 5px;
+}
+
+.register .rowF .inputBox .textF{
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 40px;
+  font-size: 18px;
+  padding:0 10px;
+  display: block;
+  transition: 0.5s;
+  pointer-events: none;
+
+}
+
+.register .rowF .inputBox input:focus + .textF,
+.register .rowF .inputBox input:valid + .textF{
+  top: -35px;
+  left: -10px;
+
+}
+
+.register .rowF .inputBox .lineF{
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #45f3ff;
+  transition: 0.5s;
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+.register .rowF .inputBox input:focus ~ .lineF,
+.register .rowF .inputBox input:valid ~ .lineF{
+  height: 100%;
+
+}
+
+.register .rowF .inputBox.textarea{
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  padding: 10px 0;
+ 
+}
+
+.register .rowF .inputBox.textarea textarea{
+  height: 100%;
+  resize: none;
+}
+
+.register .rowF .inputBox textarea:focus + .textF,
+.register .rowF .inputBox textarea:valid + .textF{
+  top: -35px;
+  left: -10px;
+
+}
+.register .rowF .inputBox textarea:focus ~ .lineF,
+.register .rowF .inputBox textarea:valid ~ .lineF{
+  height: 100%;
+
+}
+.register input[type="submit"]{
+  border: none;
+  padding: 7px 35px;
+  cursor: pointer;
+  outline: none;
+  background: #45f3ff;
+  color: #1a1a1a;
+  font-size: 18px;
+  border-radius: 2px;
+}
+
+.btnCont{
+  width: 100%;
+  text-align: center;
+}
+
+.redirect{
+  top: 10%;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.redirect a{
+  color: #45f3ff;
+  padding-right: 20px;
+ }
+
+
+
+#message {
+  display:none;
+  color: #45f3ff;
+  position: relative;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+#message p {
+  padding: 10px 35px;
+  font-size: 18px;
+}
+
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: -35px;
+  content: "✔";
+}
+
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  position: relative;
+  left: -35px;
+  content: "✖";
+}
+
+/*Profile */
+
+.profile{
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  color:#000;
+  text-align: center;
+}
+
+.container{
+  position: relative;
+  width: 60%;
+  height: 80%;
+  background: #fff;
+  box-shadow: 0 8px 8px rgba(0,0,0,.5);
+  margin: auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  text-align: center;
+}
+
+.insideContainer{
+  position: relative;
+  max-width: 100%;
+  max-height: 100%;
+  padding: 10px;
+}
+
+.container img{
+  width: 200px;
+  height: auto;
+}
+
+.profileNav{
+  position: relative;
+  width: 100%;
+  height: 5vh;
+  text-align: right;
+  margin-top: 10px;
+}
+
+.profileNav a{
+  border: none;
+  padding: 5px 15px;
+  cursor: pointer;
+  outline: none;
+  background: #51B6E9;
+  color: #1a1a1a;
+  font-size: 15px;
+  border-radius: 2px;
+}
+.profileNav button{
+  margin-right: 10px;
+  text-decoration: none;
+  border: none;
+  padding: 7px 22px;
+  cursor: pointer;
+  outline: none;
+  background: #51B6E9;
+  color: #1a1a1a;
+  font-size: 15px;
+  border-radius: 2px;
+}
+
+.points button{
+  text-decoration: none;
+  border: none;
+  padding: 7px 22px;
+  cursor: pointer;
+  outline: none;
+  background: #51B6E9;
+  color: #1a1a1a;
+  font-size: 15px;
+  border-radius: 2px;
+}
+
+.insideContainer .labels{
+  display: flex;
+    justify-content: center;
+    flex-direction: column;
+  color: #000;
+}
+
+#name{
+  font-size: 2em;
+  font-weight: 900;
+}
+
+.insideContainer hr{
+  width: 60%;
+  margin: auto;
+  background: #51B6E9;
+  margin-top: 30px;
+}
+
+.info{
+width:60%; 
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.points{
+  margin-top: 80px;
+  width: 100%;
+  text-align: center;
+}
+
+.points span{
+  font-size: 2em;
+}
+
+.myQuestions{
+  width: 100%;
+  min-height: 40%;
+  height: auto;
+  
+}
+
+.myAnswers{
+  width: 100%;
+  min-height: 40%;
+  height: auto;
+}
+
+.containerDown{
+  position: relative;
+  width: 60%;
+  min-height: 250px;
+  height: auto;
+  background: #fff;
+  box-shadow: 0 8px 8px rgba(0,0,0,.5);
+  margin: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.containerDown h3, p{
+  padding: 20px;
+}
+
+.containerDown p{
+  min-height: 80px;
+  height: auto;
+
+}
+.containerDown .details{
+  position: relative;
+  float: right;
+  margin-bottom: 5px;
+  margin-right: 20px;
+}
+
+.containerDown button{
+  border: none;
+  border-radius: 15px;
+  padding: 5px 20px;
+  cursor: pointer;
+  outline: none;
+  background: red;
+  color: #1a1a1a;
+  font-size: 18px;
+  border-radius: 2px;
+  margin: auto;
+  margin-left: 15px;
+}
+
+
+
+/*Products*/
+
+.Questions{
+  position: relative;
+  height:100vh;
+  width: 100%;
+  color:#000;
+  text-align: center;
+}
+
+.Questions .rowF{
+  position: relative;
+  width: 100%;
+  min-height: 30%;
+  height: auto;
+  display: grid;
+  grid-template: repeat(auto-fit,minmax(300px,1fr));
+  margin-bottom: 20px;
+}
+
+.containerQL{
+  position: absolute;
+  left: 50%;
+  width: 70%;
+  height: 100%;
+  top: 10%;
+  transform: translateX(-50%);
+  
+}
+
+.margin{
+  margin-bottom: 5%;
+}
+
+.containerQ{
+  position: relative;
+  width: 100%;
+  min-height: 30%;
+  background: #fff;
+  box-shadow: 0 10px 10px rgba(0,0,0,.5);
+}
+
+.containerQ h3{
+  position: relative;
+  padding: 25px;
+  width: 100%;
+  text-align: left;
+  color: #374C9F;
+}
+
+.containerQ p{
+  position: relative;
+  text-align: left;
+  min-height: 80px;
+  height: auto;
+  padding: 25px;
+  color: #000;
+}
+
+.containerQ .details{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: #333;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
+.containerQ .details span{
+  padding: 15px;
+}
+
+.containerQ .details div{
+  display: flex;
+  min-width: 20%; 
+}
+
+
+.containerQ .likeDislike{
+  position: relative;
+  text-align: left;
+  padding: 15px;
+}
+
+.containerQ .likeDislike img{
+    width:250px; 
+    height:auto;
+
+}
